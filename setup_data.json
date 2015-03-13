@@ -1,0 +1,241 @@
+{
+  "Rune Types": {
+    "letters": [
+      "0 (0)",
+      "57344 (e000)"
+    ],
+    "numbers": [
+      "80 (50)",
+      "57424 (e050)"
+    ],
+    "punctuation": [
+      "96 (60)",
+      "57440 (e060)"
+    ],
+    "formatting": [
+      "120 (78)",
+      "57600 (e100)"
+    ],
+    "other": [
+      "128 (80)",
+      "57856 (e200)"
+    ]
+  },
+  "Basic Runes": {
+    "ee": {
+      "type": "letters",
+      "pillared": true,
+      "index": 0
+    },
+    "harr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 2
+    },
+    "korr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 4
+    },
+    "meh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 6
+    },
+    "sjuh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 8
+    },
+    "ja": {
+      "type": "letters",
+      "pillared": true,
+      "index": 10
+    },
+    "chair": {
+      "type": "letters",
+      "pillared": true,
+      "index": 12
+    },
+    "orr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 14
+    },
+    "leugh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 16
+    },
+    "varr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 18
+    },
+    "thorr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 20
+    },
+    "na": {
+      "type": "letters",
+      "pillared": true,
+      "index": 22
+    },
+    "bair": {
+      "type": "letters",
+      "pillared": true,
+      "index": 24
+    },
+    "duh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 26
+    },
+    "argh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 28
+    },
+    "so": {
+      "type": "letters",
+      "pillared": true,
+      "index": 30
+    },
+    "torr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 32
+    },
+    "pair": {
+      "type": "letters",
+      "pillared": true,
+      "index": 34
+    },
+    "eurgh": {
+      "type": "letters",
+      "pillared": true,
+      "index": 36
+    },
+    "go": {
+      "type": "letters",
+      "pillared": true,
+      "index": 38
+    },
+    "ckhorr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 40
+    },
+    "djarr": {
+      "type": "letters",
+      "pillared": true,
+      "index": 42
+    },
+    "roo": {
+      "type": "letters",
+      "pillared": true,
+      "index": 44
+    },
+    "air": {
+      "type": "letters",
+      "pillared": true,
+      "index": 46
+    },
+    "fee": {
+      "type": "letters",
+      "pillared": true,
+      "index": 48
+    },
+    "eye": {
+      "type": "letters",
+      "pillared": false,
+      "index": 50
+    },
+    "oo": {
+      "type": "letters",
+      "pillared": false,
+      "index": 51
+    },
+    "atz": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 0
+    },
+    "ohs": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 1
+    },
+    "sjem": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 2
+    },
+    "ohnoh": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 3
+    },
+    "neve": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 4
+    },
+    "fee-oh": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 5
+    },
+    "tuvoh": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 6
+    },
+    "este": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 7
+    },
+    "elma": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 8
+    },
+    "alnu": {
+      "type": "numbers",
+      "pillared": false,
+      "index": 9
+    },
+    "rau": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 0
+    },
+    "ran": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 1
+    },
+    "rull": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 2
+    },
+    "rochk": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 3
+    },
+    "vee": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 4
+    },
+    "den": {
+      "type": "punctuation",
+      "pillared": false,
+      "index": 5
+    }
+  }
+}

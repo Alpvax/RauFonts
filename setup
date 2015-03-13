@@ -1,0 +1,5 @@
+#!/bin/bash
+ln -s scripts/build.py .git/hooks/pre-commit
+ln -s scripts/updateLatest.py .git/hooks/post-merge
+
+chmod +x .git/hooks/*
