@@ -1,0 +1,17 @@
+#!/bin/bash
+chmod +x scripts/build.py
+./scripts/build.py
+#git stash
+#git rebase origin/master
+#git stash pop
+git add svgs
+git add fonts
+git status
+if [[ $# -gt 0 ]]; then
+    message=$*
+else
+    message="Built fonts"
+fi
+echo $message
+git commit -m "\"$message\""
+git push
