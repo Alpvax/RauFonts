@@ -19,7 +19,7 @@ def getVersion(names):
     return version
         
 def main():
-    names = ["rau-utf.ttf"]
+    names = ["rau-128.ttf","rau-utf.ttf"]
     data = json.load(open(relPath("../build_data.json"), 'r'))
     types = data["Rune Types"]
     runes = data["Basic Runes"]
