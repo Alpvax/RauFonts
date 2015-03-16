@@ -3,19 +3,17 @@ import fontforge
 import json
 import os, sys, getopt
 import re
+from datetime import date
 
 basepath = os.path.dirname(__file__)
 def relPath(rpath):
     return os.path.abspath(os.path.join(basepath, rpath))
     
 def getVersion(names):
-    version = 0
+    version = -1
     for i in range(len(names)):
         if os.path.isfile(names[i]):
-            font = fontforge.open(names[i])
-        else:
-            font = fontforge.font()
-        version = max(version, int(font.version.split(".")[1]))
+            version = max(version, int(fontforge.open(names[i]).version.split(".")[1]))
     return version
         
 def main():
@@ -26,11 +24,13 @@ def main():
     version = getVersion(names) + 1
     for i in range(len(names)):
         font = fontforge.font()
+        font.fontname = font.fullname = names[i]
         font.version = str(i + 1) + "." + str(version)
+        font.copyright = "Copyright © " + str(date.today()) + ", Automatically built."
         flag = False
         svgPath = relPath("../svgs")
         for svg in os.listdir(svgPath):
-            base = svg[:-4]
+            base = name = svg[:-4]
             print(base)
             imod = 0
             if re.match(".+_p", svg.lower()):
@@ -39,8 +39,8 @@ def main():
             if base in runes:
                 rune = runes[base]
                 index = rune["index"] + imod + types[rune["type"]][i]
-                print("Adding rune " + svg + " with index " + str(index))
-                glyph = font.createChar(index)
+                print("Adding rune " + name + " with index " + str(index))
+                glyph = font.createChar(index, name)
                 glyph.importOutlines(os.path.join(svgPath, svg))
                 flag = True
         if flag:
