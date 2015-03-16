@@ -1,6 +1,8 @@
 #!/bin/bash
-chmod +x scripts/build.py
-./scripts/build.py
+cd fonts
+chmod +x ../scripts/build.py
+../scripts/build.py
+cd ..
 #git stash
 #git rebase origin/master
 #git stash pop

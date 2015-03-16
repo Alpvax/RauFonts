@@ -3,6 +3,7 @@ import fontforge
 import json
 import os, sys, getopt
 import re
+
 basepath = os.path.dirname(__file__)
 def relPath(rpath):
     return os.path.abspath(os.path.join(basepath, rpath))
@@ -18,24 +19,22 @@ def getVersion(names):
     return version
         
 def main():
-    names = [relPath("/../fonts/rau-utf.ttf")]
-    data = json.load(open(relPath("../setup_data.json"), 'r'))
+    names = ["rau-utf.ttf"]
+    data = json.load(open(relPath("../build_data.json"), 'r'))
     types = data["Rune Types"]
     runes = data["Basic Runes"]
-    version = getVersion(names)
-    print("version: " + str(version))
+    version = getVersion(names) + 1
     for i in range(len(names)):
         font = fontforge.font()
-        font.version = str(i + 1) + "." + version
-        print(font.version)
+        font.version = str(i + 1) + "." + str(version)
+        flag = False
         svgPath = relPath("../svgs")
         for svg in os.listdir(svgPath):
-            print(svg)
-            base = svg
+            base = svg[:-4]
+            print(base)
             imod = 0
-            if re.match("p_.+", svg.lower()):
-                base = svg[2:]
-                print("pillared version of " + base)
+            if re.match(".+_p", svg.lower()):
+                base = base[:-2]
                 imod = 1
             if base in runes:
                 rune = runes[base]
@@ -45,6 +44,7 @@ def main():
                 glyph.importOutlines(os.path.join(svgPath, svg))
                 flag = True
         if flag:
+            print("Generating font with name: " + names[i] + " and version: " + font.version)
             font.generate(names[i])
                 
 def printUsage(fileName):
