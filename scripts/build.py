@@ -24,9 +24,11 @@ def main():
     version = getVersion(names) + 1
     for i in range(len(names)):
         font = fontforge.font()
-        font.fontname = font.fullname = names[i]
+        font.familyname = "RAU (" + unichr(runes["rau"]["index"] + types[runes["rau"]["type"]][i]) + ")"
+        font.fontname = font.fullname = names[i].replace("-","")
+        print(font.fontname + "; " + font.fullname)
         font.version = str(i + 1) + "." + str(version)
-        font.copyright = "Copyright © " + str(date.today()) + ", Automatically built."
+        font.copyright = u"Copyright \u00a9 " + str(date.today()) + ", Automatically built."
         flag = False
         svgPath = relPath("../svgs")
         for svg in os.listdir(svgPath):
@@ -46,6 +48,7 @@ def main():
         if flag:
             print("Generating font with name: " + names[i] + " and version: " + font.version)
             font.generate(names[i])
+            font.close()
                 
 def printUsage(fileName):
     print("Usage:\t" + fileName + " [options]\n" +

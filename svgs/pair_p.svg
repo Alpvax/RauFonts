@@ -14,7 +14,7 @@
    id="svg3266"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Pleugh.svg">
+   sodipodi:docname="pair_p.svg">
   <defs
      id="defs3268" />
   <sodipodi:namedview
@@ -25,17 +25,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="375"
+     inkscape:cx="-402.14286"
      inkscape:cy="634.28571"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1637"
-     inkscape:window-height="1029"
-     inkscape:window-x="43"
-     inkscape:window-y="21"
+     inkscape:window-width="3759"
+     inkscape:window-height="2136"
+     inkscape:window-x="81"
+     inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -137,7 +137,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -145,24 +145,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-52.362183)">
+     transform="translate(0,-52.362183)"
+     style="fill:#000000;fill-opacity:1;stroke:none">
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 435,70 45,0 0,830 -45,0 z"
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 435,122.36218 c 0,276.66667 0,553.33333 0,830 15,0 30,0 45,0 0,-276.66667 0,-553.33333 0,-830 -15,0 -30,0 -45,0 z m 85,0 c 0,276.66667 0,553.33333 0,830 103.33333,0 206.66667,0 310,0 0,-26.78125 0,-53.5625 0,-80.34375 -88.33333,-111.08333 -176.66667,-222.16667 -265,-333.25 0,-138.80208 0,-277.60417 0,-416.40625 -15,0 -30,0 -45,0 z m 45,571.65625 c 41.97917,52.78125 83.95833,105.5625 125.9375,158.34375 -41.97917,0 -83.95833,0 -125.9375,0 0,-52.78125 0,-105.5625 0,-158.34375 z"
        id="path3007"
-       inkscape:connector-curvature="0"
-       transform="translate(0,52.362183)" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 520,70 45,0 0,830 -45,0 z"
-       id="path3009"
-       inkscape:connector-curvature="0"
-       transform="translate(0,52.362183)" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 550,467.544 280,352.121 0,80.335 -280,0 0,-100 140.931,0 L 550,622.768 z"
-       id="path3013"
-       inkscape:connector-curvature="0"
-       transform="translate(0,52.362183)" />
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
