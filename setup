@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ ! -d "fonts" ]]; then
+    mkdir fonts
+fi
+chmod +x `dirname $0`/scripts/setup.py
+args=${*:-"-h"}
+`dirname $0`/scripts/setup.py $args

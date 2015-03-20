@@ -1,4 +1,7 @@
 #!/bin/bash
+if [[ ! -d "fonts" ]]; then
+    mkdir fonts
+fi
 cd fonts
 chmod +x ../scripts/build.py
 ../scripts/build.py
