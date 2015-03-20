@@ -18,5 +18,5 @@ else
     message="Built fonts"
 fi
 echo $message
-git commit -m "\"$message\""
+git commit -m "$message"
 git push

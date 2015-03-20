@@ -24,7 +24,7 @@ def main():
     version = getVersion(names) + 1
     for i in range(len(names)):
         font = fontforge.font()
-        font.familyname = "RAU (" + unichr(runes["rau"]["index"] + types[runes["rau"]["type"]][i]) + ")"
+        font.familyname = "RAU"
         font.fontname = font.fullname = names[i].replace("-","")
         print(font.fontname + "; " + font.fullname)
         font.version = str(i + 1) + "." + str(version)
