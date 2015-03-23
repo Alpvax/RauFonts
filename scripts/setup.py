@@ -1,13 +1,56 @@
 #!/usr/bin/env python
-import os, sys, argparse, shutil, subprocess
+import os, sys, argparse, shutil, subprocess, re, json
 from distutils.util import strtobool
         
-def getBoolChoice(prompt):
+def getBoolChoice(prompt, default=False):
+    choice = raw_input(prompt)
+    if not (choice and len(choice) > 0):
+        return default
     try:
-        return strtobool(raw_input(prompt))
+        return bool(strtobool(choice))
     except ValueError:
-        return 0
+        return default
         
+def formatArg(match):
+    res = match.group(0)
+    key = match.group("key")
+    if key and key[0] in ("st"):
+        res = "{src}"
+    if key and key[0] in ("dl"):
+        res = "{dst}"
+    return res
+
+symlncmd = {"win": "mklink /d {src} {dst}"}#map of platformStrings to directory symlink commands
+
+def symlink(src, dst):
+    global symlncmd
+    command = None
+    os = sys.platform
+    for platform in symlncmd:
+        if os.startswith(platform):
+            command = symlncmd[platform]
+    if not command:
+        if getBoolChoice("Symbolic linking not yet supported on your platform. Add support? [Yes]/no: ", True):
+            platform = raw_input("Enter the string to match your platform. Leave blank to use detected platform [%s]: " % os) or os
+            print("Platform string = " + platform)
+            command = raw_input("Enter the command used to make a directory symbolic link:\n(use %t and %l as placeholders for target and link):")
+            if command and len(command.split(" ")) > 1:
+                command = re.sub("(%|\$)(?P<key>\w+)", formatArg, command, re.IGNORECASE)
+                with open(__file__, 'r+') as f:
+                    lines = f.readlines()
+                    f.seek(0)
+                    f.truncate()
+                    for line in lines:
+                        m = re.match("symlncmd = (?P<map>\{.*\})(?P<lineEnd>.*\r?\n?)", line)
+                        if m:
+                            symlncmd = json.loads(m.group("map"))
+                            symlncmd[platform] = command
+                            line = "symlncmd = %s%s" % (json.dumps(symlncmd), m.group("lineEnd"))
+                        f.write(line)
+    if command:
+        print(command.format(src=src, dst=dst))
+#        subprocess.call(command)
+
 if __name__=="__main__":
     root = os.path.realpath(__file__ + "/../..")
     parser = argparse.ArgumentParser()
@@ -38,4 +81,4 @@ if __name__=="__main__":
         if not os.path.exists(src):
             os.mkdir(src)
         print("Creating symlink " + f + " -> " + src)
-        subprocess.call(["ln", "-s", src, f])
+        symlink(src, f)
