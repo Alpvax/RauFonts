@@ -53,9 +53,11 @@ def symlink(src, dst):
 
 if __name__=="__main__":
     root = os.path.realpath(__file__ + "/../..")
+    if not os.path.exists(os.path.join(root, "fonts")):
+        os.mkdir(os.path.join(root, "fonts"))
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--force", action="store_true", help="Overwrite any existing fonts directory without asking")
-    parser.add_argument("-r", "--rename", action="store_true", help="Make a copy of the existing fonts directory. Automatically applies -y")
+    parser.add_argument("-r", "--rename", action="store_true", help="Make a copy of the existing fonts directory. Automatically applies -f")
     parser.add_argument("directory", help="The path to the local RauCore repository root")
     args = parser.parse_args()
     core = os.path.realpath(args.directory)
